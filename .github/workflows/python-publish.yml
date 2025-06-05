@@ -1,0 +1,44 @@
+name: Publish QuickBrief to PyPI
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write  # Required for PyPI trusted publishing
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      # Optional: Uncomment and replace with your PyPI project URL
+      # url: https://pypi.org/project/quickbrief/
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"  # Explicit version for consistency
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip build twine
+          pip install -r requirements.txt
+
+      - name: Build package
+        run: |
+          python -m build --sdist --wheel --outdir dist/
+
+      - name: Verify distributions
+        run: |
+          twine check dist/*
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
