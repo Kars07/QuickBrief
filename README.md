@@ -1,11 +1,11 @@
-# **QuickBrief** 📄✨  
+# **QuickBrief**   
 **AI-Powered PDF Summarization & Q&A Tool**  
 
 QuickBrief is an intelligent agent that ingests PDFs, extracts key information, generates summaries, and answers questions about the document content. Built with LangChain and NVIDIA AI models, it provides fast, accurate insights from your documents.  
 
 ---
 
-## **🚀 Features**  
+## **Features**  
 - **Document Ingestion**: Loads PDFs and text files from a directory.  
 - **Smart Summarization**: Generates concise yet detailed summaries.  
 - **Q&A Capabilities**: Answers questions based on document content.  
@@ -14,7 +14,7 @@ QuickBrief is an intelligent agent that ingests PDFs, extracts key information, 
 
 ---
 
-## **🛠️ Tech Stack & Models**  
+## **Tech Stack & Models**  
 ### **Core Frameworks**  
 - **LangChain** (Document processing, retrieval, agent orchestration)  
 - **FAISS** (Vector similarity search)  
@@ -59,7 +59,7 @@ QuickBrief is an intelligent agent that ingests PDFs, extracts key information, 
 
 ---
 
-## **📂 Configuration**  
+## **Configuration**  
 The tool is configured via `NoteSummarizationFunctionConfig`:  
 
 | Parameter         | Description | Default |
@@ -72,7 +72,7 @@ The tool is configured via `NoteSummarizationFunctionConfig`:
 
 ---
 
-## **💡 Usage**  
+## **Usage**  
 1. **Place documents** in the specified directory (e.g., `./docs/`).  
 2. **Start the agent**—it will auto-summarize documents if enabled.  
 3. **Ask questions** like:  
@@ -82,14 +82,14 @@ The tool is configured via `NoteSummarizationFunctionConfig`:
 
 ---
 
-## **🔧 Troubleshooting**  
+## **Troubleshooting**  
 - **Error loading files?** Check file paths and permissions.  
 - **No documents found?** Verify `ingest_glob` points to the right directory.  
 - **LLM not responding?** Ensure the NVIDIA API key is valid.  
 
 ---
 
-## **📜 License**  
+## **License**  
 MIT License  
 
 ---
