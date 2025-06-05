@@ -1,0 +1,38 @@
+general:
+  use_uvloop: true
+  logging:
+    console:
+      _type: console
+      level: WARN
+
+  front_end:
+    _type: fastapi
+
+functions:
+  current_datetime:
+    _type: current_datetime
+
+llms:
+  nim_llm:
+    _type: nim
+    model_name: meta/llama-4-maverick-17b-128e-instruct
+    temperature: 0.0
+    max_tokens: 1024
+    api_key: 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
+
+embedders:
+  nim_embedder:
+    _type: nim
+    model_name: nvidia/nv-embedqa-e5-v5
+
+workflow:
+  _type: note_summarization
+  tool_names:
+    - current_datetime
+  llm_name: nim_llm
+  max_history: 10
+  ingest_glob: examples/note_summarization/data/*.{pdf,txt}
+  description: "Use this tool to retrieve and access the content of documents for summarization. Always use this tool first before attempting to summarize any document."
+  chunk_size: 1024
+  auto_summarize: true
+  embedder_name: nim_embedder

@@ -1,0 +1,161 @@
+# Request Body Examples for PDF Q&A Agent
+
+## 1. Auto-Summarization (Current - Working)
+```json
+{
+  "messages": [
+    {
+      "content": "hello",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "top_p": 1,
+  "additionalProps": {}
+}
+```
+
+## 2. Specific Question About Content
+```json
+{
+  "messages": [
+    {
+      "content": "What are the main types of sorting algorithms mentioned in the document?",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "top_p": 1,
+  "additionalProps": {}
+}
+```
+
+## 3. Follow-up Conversation
+```json
+{
+  "messages": [
+    {
+      "content": "hello",
+      "role": "user"
+    },
+    {
+      "content": "The document algorithms.pdf is summarized as follows: [previous summary]",
+      "role": "assistant"
+    },
+    {
+      "content": "Can you explain the time complexity of Quick Sort?",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "top_p": 1,
+  "additionalProps": {}
+}
+```
+
+## 4. Comparison Questions
+```json
+{
+  "messages": [
+    {
+      "content": "Compare the efficiency of Linear Search vs Binary Search based on the document",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "top_p": 1,
+  "additionalProps": {}
+}
+```
+
+## 5. Detailed Analysis Request
+```json
+{
+  "messages": [
+    {
+      "content": "Provide a detailed explanation of dynamic programming with examples from the algorithms document",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "top_p": 1,
+  "additionalProps": {}
+}
+```
+
+## 6. Multiple Document Questions (if you add more PDFs)
+```json
+{
+  "messages": [
+    {
+      "content": "What documents are available and what topics do they cover?",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "top_p": 1,
+  "additionalProps": {}
+}
+```
+
+## 7. Temperature Variations for Creative Responses
+```json
+{
+  "messages": [
+    {
+      "content": "Explain algorithms in simple terms for a beginner",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.3,
+  "max_tokens": 1024,
+  "top_p": 1,
+  "additionalProps": {}
+}
+```
+
+{
+  "messages": [
+    {
+      "content": "From the PDF, can you please give me a detailed difference between Algorithm and Algorithmics",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.3,
+  "max_tokens": 4096,
+  "top_p": 1,
+  "additionalProp1": {}
+}
+
+{
+  "messages": [
+    {
+      "content": "From the chi_square.pdf, can you please give me a detailed summary and provide questions and answers.",
+      "role": "user"
+    }
+  ],
+  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "temperature": 0.7,
+  "max_tokens": 4096,
+  "top_p": 1,
+  "additionalProp1": {}
+}
+## Key Parameters Explained:
+- **temperature**: 0.0 = deterministic, 0.7 = more creative
+- **max_tokens**: Maximum response length
+- **top_p**: Nucleus sampling parameter (1.0 = no filtering)
+- **messages**: Chat history for context

@@ -1,0 +1,10 @@
+pyproject.toml
+src/note_summarization/__init__.py
+src/note_summarization/note_summarization_function.py
+src/note_summarization/register.py
+src/note_summarization.egg-info/PKG-INFO
+src/note_summarization.egg-info/SOURCES.txt
+src/note_summarization.egg-info/dependency_links.txt
+src/note_summarization.egg-info/entry_points.txt
+src/note_summarization.egg-info/requires.txt
+src/note_summarization.egg-info/top_level.txt

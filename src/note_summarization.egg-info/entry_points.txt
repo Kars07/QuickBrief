@@ -1,0 +1,2 @@
+[aiq.components]
+note_summarization = note_summarization.register
