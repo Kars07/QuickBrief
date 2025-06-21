@@ -54,7 +54,7 @@ QuickBrief is an intelligent agent that ingests PDFs, extracts key information, 
 
 4. Run the tool:  
    ```bash
-   python main.py
+   aiq serve --config_file note_summarization/configs/config.yml --host 0.0.0.0 --port 8000
    ```
 
 ---
